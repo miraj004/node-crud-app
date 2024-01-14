@@ -1,0 +1,23 @@
+<%- include('../partials/nav') %>
+
+<%- include('../partials/register-flash-message') %>
+
+<div class="main">
+    <h1 style="color: #11364c; font-size: 28px; font-weight: bold; letter-spacing: 3px; border-bottom: 1px solid lightgray; padding-bottom: 20px; margin-top:40px;">
+        Latest People Posts</h1>
+    <% if(posts.length > 0)  { %>
+        <div class="cards">
+            <% posts.forEach(post => { %>
+                <div class="cards_item">
+                    <%- include('../partials/card', {post}) %>
+                </div>
+            <% }); %>
+        </div>
+        <%- include('../partials/pagination') %>
+
+    <% } else { %>
+        <div style="width: 90%; display: flex; justify-content: center; margin-top: 20%; color: indianred;">
+            <p>Not Post Found!</p>
+        </div>
+    <% } %>
+</div>

@@ -1,0 +1,36 @@
+<article id='mainArticle' style="display: flex; justify-content: center">
+    <div class="main">
+        <div class="container">
+            <div class="cs-blog-detail">
+
+                <div class="cs-post-option-panel">
+                    <div class="rich-editor-text">
+                        <h3 style="margin-bottom: 0;"><%= post.title %></h3>
+                        <p>
+                            <%= post.excerpt %>
+                        </p>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <blockquote class="text-left-align">
+                        <span>
+                         <%= post.body %>
+                        </span>
+                                <span class="author-name"><a href="#">-- Robert Deneairo</a></span>
+
+                                <span class="author-name"><time style="font-size: 10px;"><i
+                                                class="cs-color icon-calendar6"></i><%= moment(post.createdAt).format('dd MMMM yy HH:mm:ss') %></time> <a
+                                            href="#"></a></span>
+
+                            </blockquote>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+<%- include('../../partials/admin-sidebar') %>
+
+

@@ -1,0 +1,65 @@
+<article id='mainArticle'>
+
+    <%- include('../../partials/flash-message') %>
+
+    <!--  start table  -->
+
+    <% if(posts.length > 0)  { %>
+
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Created At</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% posts.forEach(post => { %>
+                    <tr>
+                        <td>
+                            <div><a href="/admin/posts/<%- post._id %>"><%- post.title %></a></div>
+                        </td>
+                        <td><%- post.category %></td>
+                        <td><%- new Date(post.createdAt).toUTCString() %></td>
+                        <td style="display: flex; justify-content: start;">
+                            <a href="/admin/posts/<%- post._id %>/edit" class="beautiful-button"
+                               style="padding: 5px 8px; font-size: 12px; margin-right: 4px;">
+                                <%- include('../../partials/icons/edit') %>
+                            </a>
+                            <form action="/admin/posts/<%= post._id %>?_method=DELETE" method="post">
+                                <button type="submit" class="beautiful-button error"
+                                        style="padding: 5px 8px; font-size: 12px">
+                                   <%- include('../../partials/icons/delete') %>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+
+                <% }); %>
+
+                <tbody>
+            </table>
+
+
+            <footer class="footer">
+                <%- include('../../partials/pagination') %>
+            </footer>
+
+        </div>
+    <% } else { %>
+        <div style="width: 90%; display: flex; justify-content: center; margin-top: 20%; color: indianred;">
+            <p>Not Post Found!</p>
+        </div>
+    <% }  %>
+
+    <!--  end table  -->
+
+
+</article>
+
+<%- include('../../partials/admin-sidebar') %>
+
+

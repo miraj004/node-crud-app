@@ -1,0 +1,30 @@
+<ul class="pagination">
+    <% if(Number(current) === 1)  { %>
+        <span>First</span>
+    <% } else { %>
+        <a href="?page=1" >First</a>
+    <% } %>
+    <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+    <% if(i !== 1) { %>
+        <span>...</span>
+    <% } %>
+    <% for(; i <= (Number(current) + 4) && i <= pages; i++) { %>
+
+        <% if(i === current) { %>
+            <span><%= i %></span>
+        <% } else { %>
+            <a href="?page=<%= i %>"><%= i %></a>
+        <% } %>
+
+        <% if(i === Number(current) + 4 && i < pages) { %>
+            <span>...</span>
+        <% } %>
+    <% } %>
+
+    <% if(Number(current) === Number(pages))  { %>
+        <span>Last</span>
+    <% } else { %>
+        <a href="?page=<%= pages %>">Last</a>
+    <% } %>
+
+</ul>

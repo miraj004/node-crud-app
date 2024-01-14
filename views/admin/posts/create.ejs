@@ -1,0 +1,39 @@
+<article id='mainArticle' style="display: flex; justify-content: center">
+    <div class="modal" style="width: 100%;">
+        <form class="form" action="/admin/posts" method="post">
+            <div class="credit-card-info--form">
+                <div class="input_container">
+                    <label for="title" class="input_label">Post Title</label>
+                    <input id="title" class="input_field" type="text" name="title" title="Post title"
+                           placeholder="Enter your post title">
+                </div>
+                <div class="input_container">
+                    <label for="category" class="input_label">Post Category</label>
+                    <input id="category" class="input_field" type="text" name="category" title="Post Category"
+                           placeholder="Post Category">
+                </div>
+                <div class="input_container">
+                    <label for="slug" class="input_label">Post Slug</label>
+                    <input id="slug" class="input_field" type="text" name="slug" title="Post Slug"
+                           placeholder="Post - slug">
+                </div>
+                <div class="input_container">
+                    <label for="excerpt" class="input_label">Post Excerpt</label>
+                    <textarea id="excerpt" class="input_field textarea" name="excerpt" title="Post Excerpt"
+                              placeholder="Post Excerpt"></textarea>
+                </div>
+                <div class="input_container">
+                    <label for="body" class="input_label">Post Body</label>
+                    <textarea id="body" class="input_field textarea" name="body" title="Post Body"
+                              placeholder="Post Body"></textarea>
+                </div>
+
+            </div>
+            <div style="display: flex; justify-content: end; border-top: 1px solid lightgray; padding-top: 20px;">
+                <button class="beautiful-button">Go</button>
+            </div>
+        </form>
+    </div>
+</article>
+
+<%- include('../../partials/admin-sidebar') %>
